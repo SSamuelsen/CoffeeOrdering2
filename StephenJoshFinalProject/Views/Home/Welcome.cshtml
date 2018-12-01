@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Welcome";
+}
+
+<div class="welcomeScreenBackground">
+
+
+    <h2 class="welcomeHeader">Welcome</h2>
+
+    <div class="row center-block">
+        <div class="col-md-2 col-md-offset-5">
+
+            <button class="WelcomeButton" type="button" onclick="location.href='@Url.Action("SubmitOrder", "OrderRequests")'">Place Order</button>
+
+
+        </div>
+        <div class="col-md-2 col-md-offset-5">
+
+            <button class="WelcomeButton" type="button" onclick="location.href='@Url.Action("Menu", "Home")'">View Menu</button>
+
+
+        </div>
+    </div>
+</div>
+
+
