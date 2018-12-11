@@ -1,0 +1,227 @@
+﻿@model StephenJoshFinalProject.ViewModels.QueueViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+
+<button class="btn btn-default btn-sm" type="button" onclick="location.href='@Url.Action("Welcome", "Home")'">
+    <span class="glyphicon glyphicon-arrow-left"></span>Go Back
+</button>
+
+<h2 style="text-align:center">Place an Order</h2>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <div class="contaier">
+                    <table class="table table-striped table-hover ">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Drink</th>
+                                <th>Hot</th>
+                                <th>Iced</th>
+                                <th>Frozen</th>
+                                <th>Tall</th>
+                                <th>Grande</th>
+                                <th>Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Americano
+                                </td>
+                                <td>
+                                    <input asp-for="Americano" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Hot" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Iced" type="checkbox" class="form-control" />
+                                </td>
+                                <td></td>
+                                <td>
+                                    <input asp-for="Tall" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Grande" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Quantity" type="number" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Carmelo
+                                </td>
+                                <td>
+                                    <input asp-for="Carmelo" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Hot" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Iced" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Frozen" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Tall" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Grande" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Quantity" type="number" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Nova
+                                </td>
+                                <td>
+                                    <input asp-for="Nova" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Hot" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Iced" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Frozen" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Tall" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Grande" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Quantity" type="number" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Hot Chocolate
+                                </td>
+                                <td>
+                                    <input asp-for="HotChocolate" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Hot" type="checkbox" class="form-control" />
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <input asp-for="Tall" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Grande" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Quantity" type="number" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Tea
+                                </td>
+                                <td>
+                                    <input asp-for="Tea" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Hot" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Iced" type="checkbox" class="form-control" />
+                                </td>
+                                <td></td>
+                                <td>
+                                    <input asp-for="Tall" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Grande" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Quantity" type="number" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    London Fog
+                                </td>
+                                <td>
+                                    <input asp-for="LondonFog" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Hot" type="checkbox" class="form-control" />
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <input asp-for="Tall" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Grande" type="checkbox" class="form-control" />
+                                </td>
+                                <td>
+                                    <input asp-for="Quantity" type="number" class="form-control" />
+                                </td>
+                            </tr>
+                        </tbody>
+
+
+
+
+                    </table>
+                    <div class="row center-block"
+                        <div class="col-md-4">
+
+                            <div class="form-group">
+                                <p>Input a name for your order: </p>
+                                <input asp-for="SpecialRequests" class="form-control" />
+                                <span asp-validation-for="SpecialRequests" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    
+
+                </div>
+                <div class="row center-block">
+                    <div class="col-md-4 col-md-offset-4">
+
+                        <div class="form-group">
+                            <label asp-for="PickUpTime" class="control-label"></label>
+                            <input asp-for="PickUpTime" class="form-control" />
+                            <span asp-validation-for="PickUpTime" class="text-danger"></span>
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="form-group col-md-4 col-md-offset-5">
+                    <input type="submit" value="Place Order" class="btn btn-primary" style="width:45%" />
+                </div>
+        </form>
+    </div>
+</div>
+</div>
+

@@ -38,6 +38,12 @@ namespace StephenJoshFinalProject
 
             services.AddDbContext<StephenJoshFinalProjectDbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("StephenJoshFinalProjectDbContext")));
+
+            services.AddDbContext<StephenJoshFinalProject2Context>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("StephenJoshFinalProject2Context")));
+
+            services.AddDbContext<StephenJoshFinalProject3Context>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("StephenJoshFinalProject3Context")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

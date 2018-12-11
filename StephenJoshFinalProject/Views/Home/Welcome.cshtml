@@ -9,18 +9,61 @@
     <h2 class="welcomeHeader">Welcome</h2>
 
     <div class="row center-block">
-        <div class="col-md-2 col-md-offset-5">
+        <div class="col-md-4 col-md-offset-4">
 
-            <button class="WelcomeButton" type="button" onclick="location.href='@Url.Action("SubmitOrder", "OrderRequests")'">Place Order</button>
-
-
-        </div>
-        <div class="col-md-2 col-md-offset-5">
-
-            <button class="WelcomeButton" type="button" onclick="location.href='@Url.Action("Menu", "Home")'">View Menu</button>
+            <button class="btn btn-default btn-block WelcomeButton" type="button" onclick="location.href='@Url.Action("Create", "UserSubmittedOrders1")'">Place Order</button>
 
 
         </div>
+        <div>
+            </br>
+            </br>
+            </br>
+            </br>
+
+        </div>
+        <div class="col-md-4 col-md-offset-4">
+
+            <button class="btn btn-default btn-block WelcomeButton" type="button" onclick="location.href='@Url.Action("Menu", "Home")'">View Menu</button>
+
+
+        </div>
+
+        <div>
+            </br>
+            </br>
+            </br>
+            </br>
+
+        </div>
+        <div class="col-md-4 col-md-offset-4">
+
+            <button class="btn btn-default btn-block WelcomeButton" type="button" onclick="location.href='@Url.Action("RecentOrders", "UserSubmittedOrders1")'">Recent Orders</button>
+
+
+        </div>
+
+
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+
+
+
+        <div class="col-md-4 col-md-offset-4">
+
+            <button class="btn btn-default btn-block WelcomeButtonShop" type="button" onclick="location.href='@Url.Action("Index", "Home")'">Sign Off</button>
+
+
+        </div>
+
+
+
+
     </div>
 </div>
 

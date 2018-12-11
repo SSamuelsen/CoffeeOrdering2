@@ -1,0 +1,146 @@
+﻿@using StephenJoshFinalProject.TagHelpers
+
+@model IEnumerable<StephenJoshFinalProject.ViewModels.QueueViewModel>
+
+@{
+    ViewData["Title"] = "View";
+    var queryOptions = (QueryOptions)ViewBag.QueryOptions;
+}
+
+
+<button class="btn btn-default btn-sm" type="button" onclick="location.href='@Url.Action("ShopPortal", "CoffeeShopLogins")'">
+    <span class="glyphicon glyphicon-arrow-left"></span>Go Back
+</button>
+
+
+<h2>Orders</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+
+
+                Name for order
+
+
+
+
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.OrderTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Americano)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carmelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LondonFog)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HotChocolate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nova)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tall)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grande)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Iced)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Frozen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+
+            <th>
+                <sortable-link asp-controller="UserSubmittedOrders1" asp-action="Index" query-options="queryOptions" sort-field="PickUpTime">
+                    @Html.DisplayNameFor(model => model.PickUpTime)
+                </sortable-link>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr class="totalCount">
+
+
+            <td>
+                @Html.DisplayFor(x => item.SpecialRequests)
+            </td>
+
+            <td>
+                @Html.DisplayFor(x => item.OrderTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.Americano)
+            </td>
+            <th>
+                @Html.DisplayFor(x => item.Carmelo)
+            </th>
+            <td>
+                @Html.DisplayFor(x => item.LondonFog)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.HotChocolate)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.Nova)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.Tea)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.Tall)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.Grande)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.Iced)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.Hot)
+            </td>
+            <th>
+                @Html.DisplayFor(x => item.Frozen)
+            </th>
+            <td>
+                @Html.DisplayFor(x => item.Quantity)
+            </td>
+
+            <td>
+                @Html.DisplayFor(x => item.PickUpTime)
+            </td>
+            
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+@{
+
+    var totalCount = 0;
+    totalCount = Model.Count();
+
+}
+
+<h2>Total number of orders:</h2>
+<h3>@totalCount </h3>

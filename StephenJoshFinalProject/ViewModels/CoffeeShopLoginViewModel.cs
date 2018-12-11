@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace StephenJoshFinalProject.ViewModels
 {
-    public class LoginViewModel
+    public class CoffeeShopLoginViewModel
     {
-        [Required]
-        [Display(Name ="User Name")]
-        public string UserName { get; set; }
 
-        [Required]
+        public string StoreCode { get; set; }
+
+
         [DataType(DataType.Password)]
         public string Password { get; set; }
 

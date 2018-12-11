@@ -14,11 +14,20 @@ body {
     width: 100%;
     font-family: Calibri;
     font-size: 24px;
-    background-color: black;
+    background-color: steelblue;
     color: white;
 
 
 
+}
+
+.WelcomeButtonShop {
+    height: 50px;
+    width: 100%;
+    font-family: Calibri;
+    font-size: 24px;
+    background-color: transparent;
+    color: white;
 }
 
 
@@ -30,7 +39,7 @@ body {
 
 .welcomeScreenBackground {
     /* The image used */
-    background-image: url("../images/beverage-blank-break-997719.jpg");
+    background-image: url("../images/aromatic-blur-breakfast-977876.jpg");
     /* Full height */
     height: 1000px;
     width: 100%;

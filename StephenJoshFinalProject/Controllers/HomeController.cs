@@ -12,6 +12,7 @@ using StephenJoshFinalProject.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
+using StephenJoshFinalProject.TagHelpers;
 
 namespace StephenJoshFinalProject.Controllers
 {
@@ -20,17 +21,19 @@ namespace StephenJoshFinalProject.Controllers
 
         private readonly StephenJoshFinalProjectDbContext _context;
 
+      
 
 
 
         public HomeController(StephenJoshFinalProjectDbContext context)
         {
             _context = context;
+            
         }
 
 
+       
 
-        
 
 
 
@@ -72,10 +75,10 @@ namespace StephenJoshFinalProject.Controllers
         public async Task<IActionResult> Login(LoginViewModel viewModel)
         {
 
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Role, "user")
-            };
+            //var claims = new List<Claim>
+            //{
+                //new Claim(ClaimTypes.Role, "user")
+            //};
 
             List<User> usersName = await _context.User
                 .ToListAsync();
@@ -84,9 +87,19 @@ namespace StephenJoshFinalProject.Controllers
             {
                 if ((x.UserName == viewModel.UserName)&&(x.Password == viewModel.Password))
                 {
-                    User.IsInRole("user");
+                    //User.IsInRole("user");
+                    
                     return View("Welcome");
+                    
                 }
+
+                else
+                {
+                    ModelState.AddModelError("UserName", "No Account Found");
+                }
+
+
+
                 
             }
 
@@ -98,7 +111,7 @@ namespace StephenJoshFinalProject.Controllers
 
 
 
-        [Authorize(Roles = "user")]
+        //[Authorize(Roles = "user")]
         public IActionResult Welcome()
         {
             return View();

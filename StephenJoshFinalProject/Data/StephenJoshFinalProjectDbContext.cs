@@ -24,6 +24,13 @@ namespace StephenJoshFinalProject.Models
 
         public DbSet<StephenJoshFinalProject.Models.DrinkName> DrinkName { get; set; }
 
+        public DbSet<StephenJoshFinalProject.Models.StoreLogin> StoreLogin { get; set; }
+
+        public DbSet<StephenJoshFinalProject.Models.QueueItem> QueueItem { get; set; }
+
+        public DbSet<StephenJoshFinalProject.Models.CoffeeShopLogin> CoffeeShopLogin { get; set; }
+
+
 
     }
 }
