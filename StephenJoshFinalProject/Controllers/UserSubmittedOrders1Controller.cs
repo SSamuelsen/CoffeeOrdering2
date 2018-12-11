@@ -102,11 +102,22 @@ namespace StephenJoshFinalProject.Controllers
                     PickUpTime = order.Order.PickUpTime
 
                 });
-            }
+
+				string[] usrnames = { order.DrinkSpecs.SpecialRequests };
+
+				IEnumerable<string> query = from usrname in usrnames
+											where usrname == ViewBag.User
+											select usrname;
+				foreach (string str in query)
+				{
+					return View(viewModel.AsQueryable().OrderBy(queryOptions.Sort).ToList());
+				}
+
+			}
 
 
 
-            return View(viewModel.AsQueryable().OrderBy(queryOptions.Sort).ToList());       //added the AsQueryable()
+			return View(viewModel.AsQueryable().OrderBy(queryOptions.Sort).ToList());       //added the AsQueryable()
 
 
 
