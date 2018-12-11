@@ -6,12 +6,12 @@
     ViewData["Title"] = "Barista";
 }
 
-<h2>Barista</h2>
+<h1>Thank you fro your order!</h1>
 
 
-<td>
-    @Model.BaristaName
-</td>
+
+<h3>Your drink will be made by: <b>@Model.BaristaName</b></h3>
+
 
 
 <button class="btn btn-default btn-block WelcomeButton" type="button" onclick="location.href='@Url.Action("Welcome", "Home")'">Return to Menu</button>
