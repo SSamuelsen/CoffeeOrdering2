@@ -37,7 +37,6 @@ namespace StephenJoshFinalProject.Controllers
 
 
 
-
         public IActionResult Index()
         {
             return View();

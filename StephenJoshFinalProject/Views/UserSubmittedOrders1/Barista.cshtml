@@ -1,0 +1,19 @@
+﻿@model StephenJoshFinalProject.ViewModels.BaristaViewModel
+
+
+
+@{
+    ViewData["Title"] = "Barista";
+}
+
+<h2>Barista</h2>
+
+
+<td>
+    @Model.BaristaName
+</td>
+
+
+<button class="btn btn-default btn-block WelcomeButton" type="button" onclick="location.href='@Url.Action("Welcome", "Home")'">Return to Menu</button>
+
+

@@ -22,7 +22,7 @@ namespace StephenJoshFinalProject.Controllers
         }
 
 
-   
+
         //public IActionResult RecentOrders()
         //{
 
@@ -34,8 +34,21 @@ namespace StephenJoshFinalProject.Controllers
         //}
 
 
+        public IActionResult Barista()              //display the barista name
+        {
+            //get random number and select barista name from array
+            string[] baristaNames = new string[] { "Josh", "Michaela", "Stephen", "Luke" }; //array to hold barista names
+            Random randNum = new Random();
+            int num = randNum.Next(0, 3);
+            
+            var viewModel = new BaristaViewModel();
 
-        
+            viewModel.BaristaName = baristaNames[num];
+
+            return View(viewModel);
+        }
+
+
         //used to display all the orders for the store
         public async Task<IActionResult> RecentOrders(QueryOptions queryOptions)
         {
@@ -59,7 +72,7 @@ namespace StephenJoshFinalProject.Controllers
 
             var orders = await _context.UserSubmittedOrder
                 .Include(x => x.DrinkName)
-                .Include(x => x.DrinkSpecs.SpecialRequests)
+                .Include(x => x.DrinkSpecs)
                 .Include(x => x.Order)
 
                 .ToListAsync();
@@ -270,7 +283,7 @@ namespace StephenJoshFinalProject.Controllers
 
 
 
-                return RedirectToAction("Welcome", "Home");
+                return RedirectToAction("Barista", "UserSubmittedOrders1");
             }
             return View(viewModel);
 
