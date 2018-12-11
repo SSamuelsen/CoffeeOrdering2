@@ -12,9 +12,12 @@
     <span class="glyphicon glyphicon-arrow-left"></span>Go Back
 </button>
 
+@{ 
+    var name = ViewData["User"];
+}
 
 <h2>Orders</h2>
-
+<p>@name</p>
 <table class="table">
     <thead>
         <tr>

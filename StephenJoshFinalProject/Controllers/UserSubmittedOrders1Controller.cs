@@ -103,27 +103,24 @@ namespace StephenJoshFinalProject.Controllers
 
                 });
 
-				string[] usrnames = { order.DrinkSpecs.SpecialRequests };
+				
 
-				IEnumerable<string> query = from usrname in usrnames
-											where usrname == ViewBag.User
-											select usrname;
-				foreach (string str in query)
-				{
-					return View(viewModel.AsQueryable().OrderBy(queryOptions.Sort).ToList());
-				}
+			}//end foreach
 
-			}
+            //have to use tempData when passing data between two controllers
+            string userName = TempData["User"] as String;
 
 
 
-			return View(viewModel.AsQueryable().OrderBy(queryOptions.Sort).ToList());       //added the AsQueryable()
+
+            return View(viewModel.AsQueryable().Where(x => x.SpecialRequests == userName).OrderBy(queryOptions.Sort).ToList());
+            
 
 
 
 
 
-        }
+        }//end function
 
 
 
@@ -288,8 +285,8 @@ namespace StephenJoshFinalProject.Controllers
                 _context.DrinkSpecs.Add(drinkSpec);
                 _context.DrinkName.Add(drinkName);
 
-                ViewData["User"] = viewModel.SpecialRequests.ToString();       //save the user name
-
+                TempData["User"] = drinkSpec.SpecialRequests;      //save the user name
+                //ViewBag.User = viewModel.SpecialRequests.ToString();
                 await _context.SaveChangesAsync();                        //throwing error when trying to save to the database
 
 
