@@ -49,9 +49,20 @@ namespace StephenJoshFinalProject.Controllers
         }
 
 
+        
         //used to display all the orders for the store
         public async Task<IActionResult> RecentOrders(QueryOptions queryOptions)
         {
+
+            //have to use tempData when passing data between two controllers
+            string userName = TempData["User"] as String;
+
+            if (userName == null)
+            {
+                
+                return RedirectToAction("Welcome", "Home");
+            }
+
 
 
             if (queryOptions == null || string.IsNullOrWhiteSpace(queryOptions.SortField))
@@ -107,13 +118,13 @@ namespace StephenJoshFinalProject.Controllers
 
 			}//end foreach
 
-            //have to use tempData when passing data between two controllers
-            string userName = TempData["User"] as String;
+            
+            
+              return View(viewModel.AsQueryable().Where(x => x.SpecialRequests == userName).OrderBy(queryOptions.Sort).ToList());
+            
 
 
-
-
-            return View(viewModel.AsQueryable().Where(x => x.SpecialRequests == userName).OrderBy(queryOptions.Sort).ToList());
+            
             
 
 
